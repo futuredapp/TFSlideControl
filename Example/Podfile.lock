@@ -1,0 +1,14 @@
+PODS:
+  - TFSlideControl (0.1.0)
+
+DEPENDENCIES:
+  - TFSlideControl (from `../`)
+
+EXTERNAL SOURCES:
+  TFSlideControl:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TFSlideControl: 248ca5bb6dda7a686b0735455345512a5bedf8f4
+
+COCOAPODS: 0.38.2
