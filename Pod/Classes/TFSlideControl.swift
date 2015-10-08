@@ -14,7 +14,8 @@ import UIKit
     public var resetAfterValueChange: Bool = false
     
     
-    private var trackingTouch: UITouch?
+    public var trackingTouch: UITouch?
+    public var trackingTouchHandlePosition: CGPoint = CGPointZero
     
     
     @IBInspectable public var backgroundImage: UIImage? {
@@ -58,7 +59,11 @@ import UIKit
             }
         }
     }
-    
+    @IBInspectable public var handleWidth: Float = 50.0 {
+        didSet(value) {
+            updateHandleFrame()
+        }
+    }
     
     public var backgroundView: UIView? {
         willSet{
@@ -128,6 +133,12 @@ import UIKit
         overlayView?.frame = bounds
         backgroundView?.frame = bounds
         maskView?.frame = bounds
+        updateHandleFrame()
+    }
+    private func updateHandleFrame() {
+        var handleFrame = handleView.frame
+        handleFrame.size = CGSizeMake(CGFloat(handleWidth), CGRectGetHeight(bounds))
+        handleView.frame = handleFrame
     }
     
 
@@ -137,11 +148,12 @@ import UIKit
     
     
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        for touch in touches {
-            if sliderStrategy.isTouchValidForBegin(self, touch: touch) && (trackingTouch == nil) {
-                startDragging(touch)
-                break
-            }
+        if trackingTouch != nil{
+            return
+        }
+        for touch in touches where sliderStrategy.isTouchValidForBegin(self, touch: touch){
+            startDragging(touch)
+            break
         }
     }
     public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -167,6 +179,7 @@ import UIKit
     
     private func startDragging(touch: UITouch) {
         trackingTouch = touch
+        trackingTouchHandlePosition = touch.locationInView(handleView)
         reset(false)
     }
     private func updateDragging() {
@@ -174,11 +187,13 @@ import UIKit
     }
     private func cancelDragging() {
         trackingTouch = nil
+        trackingTouchHandlePosition = CGPointZero
         reset(true)
     }
     private func endDragging() {
         updateSlideControlForTrackingTouch()
         trackingTouch = nil
+        trackingTouchHandlePosition = CGPointZero
         sendActionsForControlEvents(.ValueChanged)
         if resetAfterValueChange {
             reset(true)

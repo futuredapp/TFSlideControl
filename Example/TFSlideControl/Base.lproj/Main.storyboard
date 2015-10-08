@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjp-cg-myO" customClass="TFSlideControl" customModule="TFSlideControl">
                                 <rect key="frame" x="220" y="257" width="160" height="85"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.035294117649999998" green="0.59607843140000005" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="nPJ-Oi-Ba2"/>
                                     <constraint firstAttribute="width" constant="160" id="q9F-zc-Ddw"/>
@@ -33,13 +33,32 @@
                                     <action selector="didSlide:" destination="vXZ-lx-hvc" eventType="valueChanged" id="KlH-4H-8ss"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcI-GX-ViG" customClass="TFSlideControl" customModule="TFSlideControl">
+                                <rect key="frame" x="187" y="89" width="226" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="dPo-Q6-POc"/>
+                                    <constraint firstAttribute="height" constant="53" id="mYp-R4-Jkc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="handleWidth">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didSlide:" destination="vXZ-lx-hvc" eventType="valueChanged" id="7kJ-fz-4JE"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OcI-GX-ViG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="69" id="5bm-cP-jyw"/>
                             <constraint firstItem="rjp-cg-myO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="GjV-SV-VxC"/>
                             <constraint firstItem="rjp-cg-myO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="MNo-RU-Dbc"/>
                             <constraint firstItem="rjp-cg-myO" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="P1u-Bz-gc4"/>
+                            <constraint firstItem="OcI-GX-ViG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="sb3-1A-XUC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

@@ -26,21 +26,29 @@ public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyPr
     
     
     public func isTouchValidForFinish(slideControl: TFSlideControl, touch: UITouch) -> Bool {
-        let location = touch.locationInView(slideControl)
-        return location.x > CGRectGetWidth(slideControl.bounds)
+        let rect = rectForSlideControl(slideControl, touch: touch)
+        return CGRectGetMaxX(rect) == CGRectGetMaxX(slideControl.bounds)
     }
     
     
     public func updateSlideToInitialPosition(slideControl: TFSlideControl, animated: Bool) {
         let duration = animated ? 0.3 : 0.0
         UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
-            slideControl.handleView.frame = CGRectMake(0, 0, 0, CGRectGetHeight(slideControl.bounds))
+            var handleFrame = slideControl.handleView.frame
+            handleFrame.origin = CGPointZero
+            slideControl.handleView.frame = handleFrame
         }, completion: nil)
     }
     
     public func updateSlideControlForTouch(slideControl: TFSlideControl, touch: UITouch) {
+        slideControl.handleView.frame = rectForSlideControl(slideControl, touch: touch)
+    }
+    
+    private func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
         let location = touch.locationInView(slideControl)
-        slideControl.handleView.frame = CGRectMake(0, 0, location.x, CGRectGetHeight(slideControl.bounds))
+        var handleFrame = slideControl.handleView.frame
+        handleFrame.origin = CGPointMake(min(CGRectGetWidth(slideControl.bounds) - CGRectGetWidth(handleFrame),location.x - slideControl.trackingTouchHandlePosition.x), 0)
+        return handleFrame
     }
     
 }
