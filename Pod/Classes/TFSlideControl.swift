@@ -48,6 +48,7 @@ import UIKit
             overlayView = imageView
         }
     }
+    
     @IBInspectable public var maskImage: UIImage? {
         didSet{
             if let maskImage = maskImage {
@@ -63,6 +64,17 @@ import UIKit
     @IBInspectable public var handleWidth: Float = 50.0 {
         didSet(value) {
             updateHandleFrame()
+        }
+    }
+    @IBInspectable public var handleImage: UIImage? {
+        didSet(value) {
+            if let handleImage = handleImage {
+                let imageView = UIImageView()
+                imageView.contentMode = .Center
+                imageView.image = handleImage
+                handleView = imageView
+                updateHandleFrame()
+            }
         }
     }
     
@@ -88,7 +100,6 @@ import UIKit
             }
         }
     }
-    
     
     public var handleView: UIView = {
         let view = UIView()
@@ -125,7 +136,8 @@ import UIKit
         addSubview(handleView)
     }
     public override func prepareForInterfaceBuilder() {
-        handleView.frame = CGRectMake(0, 0, bounds.size.width/2.0, bounds.size.height)
+//        handleView.frame = CGRectMake(0, 0, bounds.size.width/2.0, bounds.size.height)
+//        handleWidth = 50.0
     }
 
     override public func layoutSubviews() {

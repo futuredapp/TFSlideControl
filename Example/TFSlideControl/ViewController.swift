@@ -34,12 +34,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func didSlide(sender: AnyObject) {
+    @IBAction func didSlide(slider: TFSlideControl) {
         let alert = UIAlertController.init(title: "Your did slide!", message: nil, preferredStyle: .Alert)
         alert.addAction(UIAlertAction.init(title: "OK", style: .Cancel, handler: { (UIAlertAction) -> Void in
             alert.dismissViewControllerAnimated(true, completion: nil)
             delay(1, closure: { () -> () in
-                self.slideControl1.reset(true)
+                slider.reset(true)
             })
         }))
         presentViewController(alert, animated: true, completion: nil)
