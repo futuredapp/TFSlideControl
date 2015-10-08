@@ -26,8 +26,8 @@
                                     <constraint firstAttribute="width" constant="160" id="q9F-zc-Ddw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="overlayImage" value="bowtie_shadow"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="maskImage" value="bowtie_mask"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="overlayImage" value="bowtie_shadow"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didSlide:" destination="vXZ-lx-hvc" eventType="valueChanged" id="KlH-4H-8ss"/>

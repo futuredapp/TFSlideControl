@@ -50,12 +50,11 @@ import UIKit
     @IBInspectable public var maskImage: UIImage? {
         didSet{
             if let maskImage = maskImage {
-                layer.mask = CALayer.init()
-                if let maskLayer = self.layer.mask {
-                    maskLayer.contents = maskImage.CGImage
-                }
+                let _maskView = UIImageView()
+                _maskView.image = maskImage
+                maskView = _maskView
             } else {
-                layer.mask = nil
+                maskView = nil
             }
         }
     }
@@ -63,9 +62,7 @@ import UIKit
     
     public var backgroundView: UIView? {
         willSet{
-            if let backgroundView = backgroundView {
-                backgroundView.removeFromSuperview()
-            }
+            backgroundView?.removeFromSuperview()
         }
         didSet{
             if let backgroundView = backgroundView {
@@ -76,9 +73,7 @@ import UIKit
     }
     public var overlayView: UIView? {
         willSet{
-            if let overlayView = overlayView {
-                overlayView.removeFromSuperview()
-            }
+            overlayView?.removeFromSuperview()
         }
         didSet{
             if let overlayView = overlayView {
@@ -123,30 +118,21 @@ import UIKit
     private func customInit() {
         addSubview(handleView)
     }
-    
+    public override func prepareForInterfaceBuilder() {
+        handleView.frame = CGRectMake(0, 0, bounds.size.width/2.0, bounds.size.height)
+    }
+
     override public func layoutSubviews() {
         super.layoutSubviews()
         
-        if let overlayView = overlayView {
-            overlayView.frame = self.bounds
-        }
-        if let backgroundView = backgroundView {
-            backgroundView.frame = self.bounds
-        }
-        if let maskLayer = self.layer.mask {
-            maskLayer.frame = self.bounds
-        }
+        overlayView?.frame = bounds
+        backgroundView?.frame = bounds
+        maskView?.frame = bounds
     }
     
 
     public func reset(animated: Bool) {
         sliderStrategy.updateSlideToInitialPosition(self, animated: animated)
-    }
-    
-    
-    public override func prepareForInterfaceBuilder() {
-        handleView.frame = CGRectMake(0, 0, bounds.size.width/2.0, bounds.size.height)
-//        backgroundColor = UIColor.redColor()
     }
     
     
@@ -162,8 +148,8 @@ import UIKit
         updateDragging()
     }
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if trackingTouch != nil && touches.contains(trackingTouch!){
-            if sliderStrategy.isTouchValidForFinish(self, touch: trackingTouch!){
+        if let trackingTouch = trackingTouch where touches.contains(trackingTouch){
+            if sliderStrategy.isTouchValidForFinish(self, touch: trackingTouch){
                 endDragging()
             } else {
                 cancelDragging()
