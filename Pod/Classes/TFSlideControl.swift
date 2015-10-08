@@ -39,10 +39,14 @@ import UIKit
 
 public class TFSlideControl: UIControl {
     
-    public var sliderStrategy: TFSlideControlSliderStrategyProtocol!
+    public var sliderStrategy: TFSlideControlSliderStrategyProtocol = TFSlideControlSliderDefaultStrategy()
     public var resetAfterValueChange: Bool = false
     
-    @IBInspectable public var backgroundImage: UIImage! {
+    
+    private var trackingTouch: UITouch?
+    
+    
+    @IBInspectable public var backgroundImage: UIImage? {
         get{
             if let imageView = backgroundView as? UIImageView {
                 return imageView.image
@@ -57,7 +61,7 @@ public class TFSlideControl: UIControl {
             backgroundView = imageView
         }
     }
-    @IBInspectable public var overlayImage: UIImage! {
+    @IBInspectable public var overlayImage: UIImage? {
         get{
             if let imageView = overlayView as? UIImageView {
                 return imageView.image
@@ -72,54 +76,60 @@ public class TFSlideControl: UIControl {
             overlayView = imageView
         }
     }
-    @IBInspectable public var maskImage: UIImage! {
+    @IBInspectable public var maskImage: UIImage? {
         didSet{
             layer.mask = CALayer.init()
-            if let maskLayer = self.layer.mask {
+            if let maskLayer = self.layer.mask, maskImage = maskImage {
                 maskLayer.contents = maskImage.CGImage
             }
         }
     }
     
     
-    public var backgroundView: UIView! {
+    public var backgroundView: UIView? {
         willSet{
-            if backgroundView != nil {
+            if let backgroundView = backgroundView {
                 backgroundView.removeFromSuperview()
             }
         }
         didSet{
-            self.addSubview(backgroundView)
-            self.sendSubviewToBack(backgroundView)
+            if let backgroundView = backgroundView {
+                self.addSubview(backgroundView)
+                self.sendSubviewToBack(backgroundView)
+            }
         }
     }
-    public var overlayView: UIView! {
+    public var overlayView: UIView? {
         willSet{
-            if overlayView != nil {
+            if let overlayView = overlayView {
                 overlayView.removeFromSuperview()
             }
         }
         didSet{
-            self.addSubview(overlayView)
-            self.bringSubviewToFront(overlayView)
-        }
-    }
-    
-    
-    public var handleView: UIView! {
-        willSet{
-            handleView.removeFromSuperview()
-        }
-        didSet{
-            if overlayView != nil {
-                self.insertSubview(handleView, belowSubview: overlayView)
-            } else {
-                self.addSubview(handleView)
+            if let overlayView = overlayView {
+                self.addSubview(overlayView)
+                self.bringSubviewToFront(overlayView)
             }
         }
     }
     
-    private var trackingTouch: UITouch?
+    
+    public var handleView: UIView? {
+        willSet{
+            if let handleView = handleView {
+                handleView.removeFromSuperview()
+            }
+        }
+        didSet{
+            if let handleView = handleView {
+                if let overlayView = overlayView {
+                    self.insertSubview(handleView, belowSubview: overlayView)
+                } else {
+                    self.addSubview(handleView)
+                }
+            }
+        }
+    }
     
     
 
@@ -135,19 +145,19 @@ public class TFSlideControl: UIControl {
     }
     
     private func customInit() {
-        sliderStrategy = TFSlideControlSliderDefaultStrategy.init()
-        handleView = UIView.init()
-        handleView.backgroundColor = UIColor.whiteColor()
-        addSubview(handleView)
+        let _handleView = UIView()
+        _handleView.backgroundColor = UIColor.whiteColor()
+        addSubview(_handleView)
+        handleView = _handleView
     }
     
     override public func layoutSubviews() {
         super.layoutSubviews()
         
-        if overlayView != nil {
+        if let overlayView = overlayView {
             overlayView.frame = self.bounds
         }
-        if backgroundView != nil {
+        if let backgroundView = backgroundView {
             backgroundView.frame = self.bounds
         }
         if let maskLayer = self.layer.mask {
@@ -190,8 +200,8 @@ public class TFSlideControl: UIControl {
     
     
     private func updateSlideControlForTrackingTouch() {
-        if trackingTouch != nil{
-            sliderStrategy.updateSlideControlForTouch(self, touch: trackingTouch!)
+        if let trackingTouch = trackingTouch {
+            sliderStrategy.updateSlideControlForTouch(self, touch: trackingTouch)
         }
     }
     
