@@ -8,36 +8,7 @@
 
 import UIKit
 
-
-@IBDesignable public class TestView: UIView {
-    var view: UIView!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        backgroundColor = UIColor.greenColor()
-        layer.cornerRadius = 10
-        layer.borderColor = UIColor.redColor().CGColor
-        layer.borderWidth = 2
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        backgroundColor = UIColor.greenColor()
-        layer.cornerRadius = 10
-        layer.borderColor = UIColor.redColor().CGColor
-        layer.borderWidth = 2
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-}
-
-
-
-public class TFSlideControl: UIControl {
+@IBDesignable public class TFSlideControl: UIControl {
     
     public var sliderStrategy: TFSlideControlSliderStrategyProtocol = TFSlideControlSliderDefaultStrategy()
     public var resetAfterValueChange: Bool = false
@@ -114,19 +85,20 @@ public class TFSlideControl: UIControl {
     }
     
     
-    public var handleView: UIView? {
+    public var handleView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.whiteColor()
+        return view
+    }()
+    {
         willSet{
-            if let handleView = handleView {
-                handleView.removeFromSuperview()
-            }
+            handleView.removeFromSuperview()
         }
         didSet{
-            if let handleView = handleView {
-                if let overlayView = overlayView {
-                    self.insertSubview(handleView, belowSubview: overlayView)
-                } else {
-                    self.addSubview(handleView)
-                }
+            if let overlayView = overlayView {
+                self.insertSubview(handleView, belowSubview: overlayView)
+            } else {
+                self.addSubview(handleView)
             }
         }
     }
@@ -139,16 +111,13 @@ public class TFSlideControl: UIControl {
         customInit()
     }
     
-    required public override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
     }
     
     private func customInit() {
-        let _handleView = UIView()
-        _handleView.backgroundColor = UIColor.whiteColor()
-        addSubview(_handleView)
-        handleView = _handleView
+        addSubview(handleView)
     }
     
     override public func layoutSubviews() {
@@ -172,7 +141,8 @@ public class TFSlideControl: UIControl {
     
     
     public override func prepareForInterfaceBuilder() {
-        
+        handleView.frame = CGRectMake(0, 0, bounds.size.width/2.0, bounds.size.height)
+//        backgroundColor = UIColor.redColor()
     }
     
     
