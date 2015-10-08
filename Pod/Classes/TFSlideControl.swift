@@ -49,9 +49,13 @@ import UIKit
     }
     @IBInspectable public var maskImage: UIImage? {
         didSet{
-            layer.mask = CALayer.init()
-            if let maskLayer = self.layer.mask, maskImage = maskImage {
-                maskLayer.contents = maskImage.CGImage
+            if let maskImage = maskImage {
+                layer.mask = CALayer.init()
+                if let maskLayer = self.layer.mask {
+                    maskLayer.contents = maskImage.CGImage
+                }
+            } else {
+                layer.mask = nil
             }
         }
     }
