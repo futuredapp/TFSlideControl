@@ -28,7 +28,7 @@ import UIKit
         }
         set(image){
             let imageView = UIImageView.init()
-            imageView.contentMode = .ScaleToFill
+            imageView.contentMode = .Center
             imageView.image = image
             backgroundView = imageView
         }
@@ -43,7 +43,7 @@ import UIKit
         }
         set(image){
             let imageView = UIImageView.init()
-            imageView.contentMode = .ScaleToFill
+            imageView.contentMode = .Center
             imageView.image = image
             overlayView = imageView
         }
@@ -52,6 +52,7 @@ import UIKit
         didSet{
             if let maskImage = maskImage {
                 let _maskView = UIImageView()
+                _maskView.contentMode = .Center
                 _maskView.image = maskImage
                 maskView = _maskView
             } else {
