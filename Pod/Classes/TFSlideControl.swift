@@ -17,7 +17,6 @@ import UIKit
     public var trackingTouch: UITouch?
     public var trackingTouchHandlePosition: CGPoint = CGPointZero
     
-    
     @IBInspectable public var backgroundImage: UIImage? {
         get{
             if let imageView = backgroundView as? UIImageView {

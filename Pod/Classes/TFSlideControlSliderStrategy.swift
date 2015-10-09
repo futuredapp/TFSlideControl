@@ -21,7 +21,7 @@ public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyPr
 
     public func isTouchValidForBegin(slideControl: TFSlideControl, touch: UITouch) -> Bool {
         let location = touch.locationInView(slideControl)
-        return location.x < max(CGRectGetWidth(slideControl.bounds)/4.0, 50)
+        return CGRectContainsPoint(CGRectInset(slideControl.handleView.frame, -10, 0), location)
     }
     
     
@@ -47,7 +47,10 @@ public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyPr
     private func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
         let location = touch.locationInView(slideControl)
         var handleFrame = slideControl.handleView.frame
-        handleFrame.origin = CGPointMake(min(CGRectGetWidth(slideControl.bounds) - CGRectGetWidth(handleFrame),location.x - slideControl.trackingTouchHandlePosition.x), 0)
+        var x = location.x - slideControl.trackingTouchHandlePosition.x
+        x = min(x,CGRectGetWidth(slideControl.bounds) - CGRectGetWidth(handleFrame))
+        x = max(x,0)
+        handleFrame.origin = CGPointMake(x, 0)
         return handleFrame
     }
     
