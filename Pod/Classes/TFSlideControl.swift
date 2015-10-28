@@ -12,7 +12,7 @@ import UIKit
     
     public var sliderStrategy: TFSlideControlSliderStrategyProtocol = TFSlideControlSliderDefaultStrategy()
     public var resetAfterValueChange: Bool = false
-    
+    private(set) var horizontalPadding: CGFloat = 0
     
     public var trackingTouch: UITouch?
     public var trackingTouchHandlePosition: CGPoint = CGPointZero
@@ -54,7 +54,7 @@ import UIKit
                 let _maskView = UIImageView()
                 _maskView.contentMode = .Center
                 _maskView.image = maskImage
-                maskView = _maskView
+                maskView = _maskView                
             } else {
                 maskView = nil
             }
@@ -65,6 +65,7 @@ import UIKit
             updateHandleFrame()
         }
     }
+    @IBInspectable public var handleConfirmOffset: Float = 0.0
     @IBInspectable public var handleImage: UIImage? {
         didSet(value) {
             if let handleImage = handleImage {
@@ -146,6 +147,14 @@ import UIKit
         backgroundView?.frame = bounds
         maskView?.frame = bounds
         updateHandleFrame()
+        
+        if let maskImage = self.maskImage {
+            horizontalPadding = (CGRectGetWidth(self.frame) - maskImage.size.width) / 2
+        } else {
+            horizontalPadding = 0
+        }
+        
+        reset(false)
     }
     private func updateHandleFrame() {
         var handleFrame = handleView.frame
@@ -158,8 +167,7 @@ import UIKit
         sliderStrategy.updateSlideToInitialPosition(self, animated: animated)
     }
     
-    
-    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    public func tryStartDragging(touches: Set<UITouch>) {
         if trackingTouch != nil{
             return
         }
@@ -168,7 +176,16 @@ import UIKit
             break
         }
     }
+    
+    
+    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        tryStartDragging(touches)
+    }
     public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if trackingTouch == nil {
+            tryStartDragging(touches)
+        }
+        
         updateDragging()
     }
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {

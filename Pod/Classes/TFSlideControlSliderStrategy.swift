@@ -21,13 +21,13 @@ public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyPr
 
     public func isTouchValidForBegin(slideControl: TFSlideControl, touch: UITouch) -> Bool {
         let location = touch.locationInView(slideControl)
-        return CGRectContainsPoint(CGRectInset(slideControl.handleView.frame, -10, 0), location)
+        return CGRectContainsPoint(slideControl.handleView.frame, location)
     }
     
     
     public func isTouchValidForFinish(slideControl: TFSlideControl, touch: UITouch) -> Bool {
         let rect = rectForSlideControl(slideControl, touch: touch)
-        return CGRectGetMaxX(rect) == CGRectGetMaxX(slideControl.bounds)
+        return CGRectGetMinX(rect) == CGRectGetMaxX(slideControl.bounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset)
     }
     
     
@@ -35,7 +35,7 @@ public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyPr
         let duration = animated ? 0.3 : 0.0
         UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
             var handleFrame = slideControl.handleView.frame
-            handleFrame.origin = CGPointZero
+            handleFrame.origin = CGPointMake(slideControl.horizontalPadding, 0)
             slideControl.handleView.frame = handleFrame
         }, completion: nil)
     }
@@ -48,8 +48,8 @@ public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyPr
         let location = touch.locationInView(slideControl)
         var handleFrame = slideControl.handleView.frame
         var x = location.x - slideControl.trackingTouchHandlePosition.x
-        x = min(x,CGRectGetWidth(slideControl.bounds) - CGRectGetWidth(handleFrame))
-        x = max(x,0)
+        x = min(x,CGRectGetMaxX(slideControl.bounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset))
+        x = max(x,slideControl.horizontalPadding)
         handleFrame.origin = CGPointMake(x, 0)
         return handleFrame
     }
