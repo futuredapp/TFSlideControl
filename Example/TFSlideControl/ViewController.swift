@@ -21,10 +21,13 @@ func delay(delay:Double, closure:()->()) {
 class ViewController: UIViewController {
 
     @IBOutlet var slideControl1: TFSlideControl!
+    @IBOutlet var slideControl2: TFSlideControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        slideControl2.sliderStrategy = TFSlideControlSliderMadoraStrategy()
+        
 //        slideControl1.overlayImage = UIImage.init(named: "bowtie_shadow")
 //        slideControl1.maskImage = UIImage.init(named: "bowtie_mask")
     }

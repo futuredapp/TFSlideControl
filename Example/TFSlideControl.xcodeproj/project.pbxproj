@@ -13,8 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		705B597CDEEAE9D80F3D8C74 /* Pods_TFSlideControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB05B5A7E50AAB2BFE6A8EF /* Pods_TFSlideControl_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B7041E868FAD0B280254C9E4 /* Pods_TFSlideControl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1093289C230682629C2A28A /* Pods_TFSlideControl_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		705B597CDEEAE9D80F3D8C74 /* Pods_TFSlideControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB05B5A7E50AAB2BFE6A8EF /* Pods_TFSlideControl_Example.framework */; };
+		B7041E868FAD0B280254C9E4 /* Pods_TFSlideControl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1093289C230682629C2A28A /* Pods_TFSlideControl_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
