@@ -195,8 +195,9 @@ import UIKit
         maskView?.frame = contentBounds
         updateHandleFrame()
         
-        if let maskImage = self.maskImage {
-            horizontalPadding = (CGRectGetWidth(self.frame) - maskImage.size.width) / 2
+        if let maskImage = self.maskImage, maskView = self.maskView {
+            let scale = CGRectGetHeight(maskView.frame) / maskImage.size.height
+            horizontalPadding = (CGRectGetWidth(self.frame) - scale * maskImage.size.width) / 2
         } else {
             horizontalPadding = 0
         }
