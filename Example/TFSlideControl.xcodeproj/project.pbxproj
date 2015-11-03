@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		705B597CDEEAE9D80F3D8C74 /* Pods_TFSlideControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB05B5A7E50AAB2BFE6A8EF /* Pods_TFSlideControl_Example.framework */; };
 		B7041E868FAD0B280254C9E4 /* Pods_TFSlideControl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1093289C230682629C2A28A /* Pods_TFSlideControl_Tests.framework */; };
+		D002B6051BE8F60500CD16F6 /* TFSlideControlMadoraStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D002B6041BE8F60500CD16F6 /* TFSlideControlMadoraStrategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		8533CDA1D1A50738DDED055C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8AB05B5A7E50AAB2BFE6A8EF /* Pods_TFSlideControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFSlideControl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF55DFC80184357E3E8E7894 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D002B6041BE8F60500CD16F6 /* TFSlideControlMadoraStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFSlideControlMadoraStrategy.swift; sourceTree = "<group>"; };
 		E1093289C230682629C2A28A /* Pods_TFSlideControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFSlideControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB68C197033A8DDE0CCDF113 /* Pods-TFSlideControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFSlideControl_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TFSlideControl_Tests/Pods-TFSlideControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				D002B6041BE8F60500CD16F6 /* TFSlideControlMadoraStrategy.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -361,6 +364,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				D002B6051BE8F60500CD16F6 /* TFSlideControlMadoraStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

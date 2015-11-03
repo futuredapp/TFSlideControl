@@ -64,7 +64,7 @@ public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyPr
     }
 
     
-    internal func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
+    public func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
         let location = touch.locationInView(slideControl)
         var handleFrame = slideControl.handleView.frame
         var x = location.x - slideControl.trackingTouchHandlePosition.x

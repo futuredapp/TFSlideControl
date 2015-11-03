@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TFSlideControl
 
 public class TFSlideControlSliderMadoraStrategy: TFSlideControlSliderDefaultStrategy {
 
@@ -44,7 +45,7 @@ public class TFSlideControlSliderMadoraStrategy: TFSlideControlSliderDefaultStra
         return false;
     }
     
-    internal override func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
+    public override func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
         let location = touch.locationInView(slideControl)
         var handleFrame = slideControl.handleView.frame
         var x = location.x - slideControl.trackingTouchHandlePosition.x

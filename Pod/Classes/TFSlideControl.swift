@@ -14,7 +14,7 @@ import UIKit
     public var resetWhenDraggingCancelled = false
     public var resetAfterValueChange: Bool = false
     public var guideAnimationInterval: NSTimeInterval = 1.25
-    private(set) var horizontalPadding: CGFloat = 0
+    public private(set) var horizontalPadding: CGFloat = 0
     
     public var trackingTouch: UITouch?
     public var trackingTouchHandlePosition: CGPoint = CGPointZero
