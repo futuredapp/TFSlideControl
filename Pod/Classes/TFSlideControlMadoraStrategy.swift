@@ -11,36 +11,8 @@ import UIKit
 public class TFSlideControlSliderMadoraStrategy: TFSlideControlSliderDefaultStrategy {
 
     public override func isTouchValidForBegin(slideControl: TFSlideControl, touch: UITouch) -> Bool {
-        return true
-    }
-    
-    public override func isTouchValidForFinish(slideControl: TFSlideControl, touch: UITouch) -> Bool {
-        let rect = rectForSlideControl(slideControl, touch: touch)
-        
-        if CGRectGetMinX(rect) == CGRectGetMaxX(slideControl.contentBounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset) {
-            // slider is in final position
-            return true;
-        } else if CGRectGetMaxX(rect) > CGRectGetMidX(slideControl.frame) / 2 {
-            slideControl.submit(true)
-        }
-        
-        return false;
-    }
-    
-    public override func updateSlideToInitialPosition(slideControl: TFSlideControl, animated: Bool) {
-        let duration = animated ? 0.3 : 0.0
-        UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
-            var handleFrame = slideControl.handleView.frame
-            
-            if let backgroundImage = slideControl.backgroundImage, backgroundView = slideControl.backgroundView {
-                let scaledImageWidth = backgroundImage.size.width * backgroundView.frame.size.height / backgroundImage.size.height
-                handleFrame.origin = CGPointMake(CGRectGetMidX(backgroundView.frame) - scaledImageWidth / 2 - CGFloat(slideControl.handleWidth), 0)
-            } else {
-                handleFrame.origin = CGPointMake(slideControl.backgroundView!.frame.origin.x, 0)
-            }
-            
-            slideControl.handleView.frame = handleFrame
-        }, completion: nil)
+        let location = touch.locationInView(slideControl)
+        return location.x > slideControl.horizontalPadding
     }
     
     public override func updateSlideControlForTouch(slideControl: TFSlideControl, touch: UITouch) {
@@ -50,13 +22,44 @@ public class TFSlideControlSliderMadoraStrategy: TFSlideControlSliderDefaultStra
         }
     }
     
+    public override func updateSlideToInitialPosition(slideControl: TFSlideControl, animated: Bool) {
+        let duration = animated ? 0.3 : 0.0
+        UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+            var handleFrame = slideControl.handleView.frame
+            handleFrame.origin = CGPointMake(slideControl.horizontalPadding - CGFloat(slideControl.handleWidth), 0)
+            slideControl.handleView.frame = handleFrame
+            }, completion: nil)
+    }
+    
+    public override func isTouchValidForFinish(slideControl: TFSlideControl, touch: UITouch) -> Bool {
+        let rect = rectForSlideControl(slideControl, touch: touch)
+                
+        if CGRectGetMinX(rect) == CGRectGetMaxX(slideControl.contentBounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset) {
+            // slider is in final position
+            return true;
+        } else if let maskView = slideControl.maskView where CGRectGetMaxX(rect) > (CGRectGetMidX(slideControl.bounds) - CGRectGetWidth(maskView.frame) / 8) {
+            slideControl.submit(true)
+        }
+        
+        return false;
+    }
+    
+    internal override func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
+        let location = touch.locationInView(slideControl)
+        var handleFrame = slideControl.handleView.frame
+        var x = location.x - slideControl.trackingTouchHandlePosition.x
+        x = min(x,CGRectGetMaxX(slideControl.contentBounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset))
+        x = max(x,slideControl.horizontalPadding - CGFloat(slideControl.handleWidth))
+        handleFrame.origin = CGPointMake(x, 0)
+        return handleFrame
+    }
+
     public override func animateGuideTrace(slideControl: TFSlideControl, completion: () -> ()) {
         slideControl.guideView?.alpha = 1.0
         
-        if let guideView = slideControl.guideView, backgroundImage = slideControl.backgroundImage, backgroundView = slideControl.backgroundView {
+        if let guideView = slideControl.guideView {
             var guideFrame = guideView.frame
-            let scaledImageWidth = backgroundImage.size.width * backgroundView.frame.size.height / backgroundImage.size.height
-            guideFrame.origin = CGPointMake(CGRectGetMidX(backgroundView.frame) - scaledImageWidth / 2 - CGFloat(slideControl.handleWidth), 0)
+            guideFrame.origin = CGPointMake(slideControl.horizontalPadding - CGRectGetWidth(guideFrame), 0)
             guideView.frame = guideFrame
         }
 
