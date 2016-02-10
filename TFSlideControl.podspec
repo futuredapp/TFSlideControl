@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+Customizable slide control for triggering your actions such as order submission by a simple finger slide.
                        DESC
 
   s.homepage         = "https://github.com/thefuntasty/TFSlideControl"
@@ -24,7 +25,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Jakub Knejzlik" => "jakub.knejzlik@gmail.com" }
   s.source           = { :git => "https://github.com/thefuntasty/TFSlideControl.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://www.twitter.com/thefuntasty'
+  s.social_media_url = 'https://www.twitter.com/thefuntasty'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
