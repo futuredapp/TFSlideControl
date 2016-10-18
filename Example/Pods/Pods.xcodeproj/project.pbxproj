@@ -1,0 +1,857 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0691F4497015EC707A061E197216B7EB /* TFSlideControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7489727F3375E6AD7ED390409D76EA85 /* TFSlideControl-dummy.m */; };
+		13FD9E64D28437069A6F1F33D10699B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		1ED5C3D535A5A27EFC299F9A817ACC2E /* TFSlideControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 719EAB99CDDE32A29F570F41D5A835EF /* TFSlideControl.bundle */; };
+		35CAD3E3923B3B5AD8D45D96B42F3A2F /* Pods-TFSlideControl_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A5F0ED70A55AAC3BAB9320ED0EB474 /* Pods-TFSlideControl_Example-dummy.m */; };
+		4212BDE4A4EAE6424CD9EFEFEE3969D9 /* TFSlideControlSliderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5782D874CB4D47C0C3DE368549DEB1B /* TFSlideControlSliderStrategy.swift */; };
+		4345B8BEF9F073A1566E8CDEDB5EFC6E /* Pods-TFSlideControl_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25E82E8F252931F9E912055CDFB3DACA /* Pods-TFSlideControl_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4729FF398FB91F33D077219786D9A662 /* TFSlideControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8F29DC202B1EC26B44CEF3F57DDE3E /* TFSlideControl.swift */; };
+		84A2164D74046D21BF8AA54AEBEE2834 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		A517330C40C0B85263165091355F0D48 /* Pods-TFSlideControl_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEF742FBB031453DBBDF1567A86A4 /* Pods-TFSlideControl_Tests-dummy.m */; };
+		B9A4C5AB0C110370B57EDAFC40C3218F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		F71112771CF1942588F25B3D24AA29D8 /* TFSlideControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE46F39FAFB0FA171582F1407775859 /* TFSlideControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8ABF426D16901A27E1A13955F0D907B /* Pods-TFSlideControl_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A05DC0699BD6CD50EEB954DA00BF80C /* Pods-TFSlideControl_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84161FBE250B58390D881A8CDE4F7FEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A89B1E9330D1DC6314456EB270DC44A;
+			remoteInfo = TFSlideControl;
+		};
+		99F5D328131E2B163D1AA0B83AC868EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A89B1E9330D1DC6314456EB270DC44A;
+			remoteInfo = TFSlideControl;
+		};
+		ADDA1B23FCECBF0FFB83734F251529CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10C5E376B6E440BE27B839FF9CB6FCCB;
+			remoteInfo = "TFSlideControl-TFSlideControl";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00A7F8A81DADED14DD8FFAB2F0A578C0 /* Pods-TFSlideControl_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TFSlideControl_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		0791C0EE695D4AE5E23753F08AEDBE12 /* Pods-TFSlideControl_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TFSlideControl_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0974452898F7E4A85D108178A2227253 /* Pods-TFSlideControl_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TFSlideControl_Example-frameworks.sh"; sourceTree = "<group>"; };
+		0BC2DFB08220BE40BFF44BA03E5A343A /* Pods_TFSlideControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFSlideControl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A05DC0699BD6CD50EEB954DA00BF80C /* Pods-TFSlideControl_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TFSlideControl_Example-umbrella.h"; sourceTree = "<group>"; };
+		1AE46F39FAFB0FA171582F1407775859 /* TFSlideControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TFSlideControl-umbrella.h"; sourceTree = "<group>"; };
+		1FB8E015FBB1A649FDC41A68B88C8FEB /* Pods-TFSlideControl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFSlideControl_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		25E82E8F252931F9E912055CDFB3DACA /* Pods-TFSlideControl_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TFSlideControl_Tests-umbrella.h"; sourceTree = "<group>"; };
+		260EB22D7AED1A8B80EEF6086FF799A8 /* TFSlideControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TFSlideControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE5293FBB4C9ECABEB6121A39176A04 /* TFSlideControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TFSlideControl.modulemap; sourceTree = "<group>"; };
+		44E53E04E1A68EC36FE14B95F12F1325 /* Pods-TFSlideControl_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TFSlideControl_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		4B2D049873143A0219FB9BEEC585BCBA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B8EEF742FBB031453DBBDF1567A86A4 /* Pods-TFSlideControl_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TFSlideControl_Tests-dummy.m"; sourceTree = "<group>"; };
+		6D12F6F6FC4410AF85FAC595AB6A9B7E /* ResourceBundle-TFSlideControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TFSlideControl-Info.plist"; sourceTree = "<group>"; };
+		719EAB99CDDE32A29F570F41D5A835EF /* TFSlideControl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFSlideControl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		7489727F3375E6AD7ED390409D76EA85 /* TFSlideControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TFSlideControl-dummy.m"; sourceTree = "<group>"; };
+		7C788396492E72C2316CE7378B8257CF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D00CB2E8EA6D145E64D31BD7C6F4A0F /* Pods-TFSlideControl_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TFSlideControl_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		86F4993BFC291F8C693787692CC48758 /* Pods-TFSlideControl_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TFSlideControl_Example.modulemap"; sourceTree = "<group>"; };
+		903607C28CFA636926EB2B51B3ADF3F3 /* Pods-TFSlideControl_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TFSlideControl_Tests-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2A5F0ED70A55AAC3BAB9320ED0EB474 /* Pods-TFSlideControl_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TFSlideControl_Example-dummy.m"; sourceTree = "<group>"; };
+		A44DD3403C41A5E56C8314AD919D35FB /* Pods-TFSlideControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFSlideControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5782D874CB4D47C0C3DE368549DEB1B /* TFSlideControlSliderStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TFSlideControlSliderStrategy.swift; sourceTree = "<group>"; };
+		A765D2EEEFD802BF582495F4730BDB63 /* Pods-TFSlideControl_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFSlideControl_Example.release.xcconfig"; sourceTree = "<group>"; };
+		BDB82012A9B30AA2363311536CE996A0 /* Pods-TFSlideControl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFSlideControl_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C6F87363D40FBBF4093573FCB9626E72 /* TFSlideControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TFSlideControl-prefix.pch"; sourceTree = "<group>"; };
+		CACF17A2A011B570AE38069CF7193740 /* Pods_TFSlideControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFSlideControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D16DC1C2CB00831BE602BF4E46EA0AA8 /* Pods-TFSlideControl_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TFSlideControl_Tests.modulemap"; sourceTree = "<group>"; };
+		DE906A21360E34837D1298F950BBE69D /* TFSlideControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TFSlideControl.xcconfig; sourceTree = "<group>"; };
+		EA46AA5CD5D043A7BB0D0A803F1A0834 /* Pods-TFSlideControl_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TFSlideControl_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		ED774AADF874A76CA16D73E1DFEDB359 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB10973809CE68712A7653BE1FAB5122 /* Pods-TFSlideControl_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TFSlideControl_Example-resources.sh"; sourceTree = "<group>"; };
+		FD8F29DC202B1EC26B44CEF3F57DDE3E /* TFSlideControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TFSlideControl.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		009E7C10B3993AD9EE724EE53C2337DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13FD9E64D28437069A6F1F33D10699B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B111597DAF857CD166163AC30DFED566 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9A4C5AB0C110370B57EDAFC40C3218F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8A4C503AE74DE35EF4043732D2D1613 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF762B9EAC3E1B9297F7575404E30B3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A2164D74046D21BF8AA54AEBEE2834 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0088B59488221E3BE56274624528AFB3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B2D049873143A0219FB9BEEC585BCBA /* Info.plist */,
+				6D12F6F6FC4410AF85FAC595AB6A9B7E /* ResourceBundle-TFSlideControl-Info.plist */,
+				2DE5293FBB4C9ECABEB6121A39176A04 /* TFSlideControl.modulemap */,
+				DE906A21360E34837D1298F950BBE69D /* TFSlideControl.xcconfig */,
+				7489727F3375E6AD7ED390409D76EA85 /* TFSlideControl-dummy.m */,
+				C6F87363D40FBBF4093573FCB9626E72 /* TFSlideControl-prefix.pch */,
+				1AE46F39FAFB0FA171582F1407775859 /* TFSlideControl-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TFSlideControl";
+			sourceTree = "<group>";
+		};
+		0A7EE58D2A6470654C68FA9D3C0E0428 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B433A2847075FB804564CCEE4F1EA4F /* Pods-TFSlideControl_Example */,
+				31356C8D816E901C798F0535406A4A21 /* Pods-TFSlideControl_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		31356C8D816E901C798F0535406A4A21 /* Pods-TFSlideControl_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ED774AADF874A76CA16D73E1DFEDB359 /* Info.plist */,
+				D16DC1C2CB00831BE602BF4E46EA0AA8 /* Pods-TFSlideControl_Tests.modulemap */,
+				0791C0EE695D4AE5E23753F08AEDBE12 /* Pods-TFSlideControl_Tests-acknowledgements.markdown */,
+				EA46AA5CD5D043A7BB0D0A803F1A0834 /* Pods-TFSlideControl_Tests-acknowledgements.plist */,
+				5B8EEF742FBB031453DBBDF1567A86A4 /* Pods-TFSlideControl_Tests-dummy.m */,
+				44E53E04E1A68EC36FE14B95F12F1325 /* Pods-TFSlideControl_Tests-frameworks.sh */,
+				903607C28CFA636926EB2B51B3ADF3F3 /* Pods-TFSlideControl_Tests-resources.sh */,
+				25E82E8F252931F9E912055CDFB3DACA /* Pods-TFSlideControl_Tests-umbrella.h */,
+				A44DD3403C41A5E56C8314AD919D35FB /* Pods-TFSlideControl_Tests.debug.xcconfig */,
+				BDB82012A9B30AA2363311536CE996A0 /* Pods-TFSlideControl_Tests.release.xcconfig */,
+			);
+			name = "Pods-TFSlideControl_Tests";
+			path = "Target Support Files/Pods-TFSlideControl_Tests";
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4B0D194E4D05307511534DE3911B28CB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5288E94DE9B9B4931CB5351BD975A9D6 /* TFSlideControl */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		5288E94DE9B9B4931CB5351BD975A9D6 /* TFSlideControl */ = {
+			isa = PBXGroup;
+			children = (
+				9F51C1B8B9834CA4CA9B1F5F55ACD9D7 /* Pod */,
+				0088B59488221E3BE56274624528AFB3 /* Support Files */,
+			);
+			name = TFSlideControl;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		59A12B27C289F093D75CCF83E6C48624 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FD8F29DC202B1EC26B44CEF3F57DDE3E /* TFSlideControl.swift */,
+				A5782D874CB4D47C0C3DE368549DEB1B /* TFSlideControlSliderStrategy.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5B433A2847075FB804564CCEE4F1EA4F /* Pods-TFSlideControl_Example */ = {
+			isa = PBXGroup;
+			children = (
+				7C788396492E72C2316CE7378B8257CF /* Info.plist */,
+				86F4993BFC291F8C693787692CC48758 /* Pods-TFSlideControl_Example.modulemap */,
+				7D00CB2E8EA6D145E64D31BD7C6F4A0F /* Pods-TFSlideControl_Example-acknowledgements.markdown */,
+				00A7F8A81DADED14DD8FFAB2F0A578C0 /* Pods-TFSlideControl_Example-acknowledgements.plist */,
+				A2A5F0ED70A55AAC3BAB9320ED0EB474 /* Pods-TFSlideControl_Example-dummy.m */,
+				0974452898F7E4A85D108178A2227253 /* Pods-TFSlideControl_Example-frameworks.sh */,
+				FB10973809CE68712A7653BE1FAB5122 /* Pods-TFSlideControl_Example-resources.sh */,
+				1A05DC0699BD6CD50EEB954DA00BF80C /* Pods-TFSlideControl_Example-umbrella.h */,
+				1FB8E015FBB1A649FDC41A68B88C8FEB /* Pods-TFSlideControl_Example.debug.xcconfig */,
+				A765D2EEEFD802BF582495F4730BDB63 /* Pods-TFSlideControl_Example.release.xcconfig */,
+			);
+			name = "Pods-TFSlideControl_Example";
+			path = "Target Support Files/Pods-TFSlideControl_Example";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				4B0D194E4D05307511534DE3911B28CB /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				B7E39B12934CDC51DBE83B48F7A50AC5 /* Products */,
+				0A7EE58D2A6470654C68FA9D3C0E0428 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9F51C1B8B9834CA4CA9B1F5F55ACD9D7 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				59A12B27C289F093D75CCF83E6C48624 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		B7E39B12934CDC51DBE83B48F7A50AC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0BC2DFB08220BE40BFF44BA03E5A343A /* Pods_TFSlideControl_Example.framework */,
+				CACF17A2A011B570AE38069CF7193740 /* Pods_TFSlideControl_Tests.framework */,
+				719EAB99CDDE32A29F570F41D5A835EF /* TFSlideControl.bundle */,
+				260EB22D7AED1A8B80EEF6086FF799A8 /* TFSlideControl.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		314F2CD258602F75B2E6D8E6E95BA1E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8ABF426D16901A27E1A13955F0D907B /* Pods-TFSlideControl_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C34EAFE5E550E53204460235677D0B2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F71112771CF1942588F25B3D24AA29D8 /* TFSlideControl-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		938B69DAF9B3EFF026850CFC0AE1BD90 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4345B8BEF9F073A1566E8CDEDB5EFC6E /* Pods-TFSlideControl_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		10C5E376B6E440BE27B839FF9CB6FCCB /* TFSlideControl-TFSlideControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 762FF152BDCEF0D5277577A9EF6575AB /* Build configuration list for PBXNativeTarget "TFSlideControl-TFSlideControl" */;
+			buildPhases = (
+				096A3BB0BB638F50314D11F6C5FA93EC /* Sources */,
+				C8A4C503AE74DE35EF4043732D2D1613 /* Frameworks */,
+				1430F97E3BE6C4569A136840420938A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TFSlideControl-TFSlideControl";
+			productName = "TFSlideControl-TFSlideControl";
+			productReference = 719EAB99CDDE32A29F570F41D5A835EF /* TFSlideControl.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		1A89B1E9330D1DC6314456EB270DC44A /* TFSlideControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88777B4790043D187DDEF8AD5820E720 /* Build configuration list for PBXNativeTarget "TFSlideControl" */;
+			buildPhases = (
+				7FF02EE7281D6441E647F75E81E0C854 /* Sources */,
+				B111597DAF857CD166163AC30DFED566 /* Frameworks */,
+				EBCCF7D6345DF98B15550E135E8CF708 /* Resources */,
+				4C34EAFE5E550E53204460235677D0B2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DDDBB3A5A40860DB820B8B89C0B4D6E /* PBXTargetDependency */,
+			);
+			name = TFSlideControl;
+			productName = TFSlideControl;
+			productReference = 260EB22D7AED1A8B80EEF6086FF799A8 /* TFSlideControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4B079BDADAEF0970F22C2B33CB923340 /* Pods-TFSlideControl_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8E36048ED61BF70A6C6D3A2C1CCD5C /* Build configuration list for PBXNativeTarget "Pods-TFSlideControl_Example" */;
+			buildPhases = (
+				AC0427A2C7E40203D3E86E169E825F4D /* Sources */,
+				009E7C10B3993AD9EE724EE53C2337DF /* Frameworks */,
+				314F2CD258602F75B2E6D8E6E95BA1E6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE6B24AD916909E64F5834E222F85C09 /* PBXTargetDependency */,
+			);
+			name = "Pods-TFSlideControl_Example";
+			productName = "Pods-TFSlideControl_Example";
+			productReference = 0BC2DFB08220BE40BFF44BA03E5A343A /* Pods_TFSlideControl_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		64A75C18A3E61CAD7FF3BEB874A51806 /* Pods-TFSlideControl_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FDE7F9DEAE924D622600C12FFEC3E74 /* Build configuration list for PBXNativeTarget "Pods-TFSlideControl_Tests" */;
+			buildPhases = (
+				D5F7AD357D61DCC227EED6829EE21529 /* Sources */,
+				EF762B9EAC3E1B9297F7575404E30B3B /* Frameworks */,
+				938B69DAF9B3EFF026850CFC0AE1BD90 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D01A6B3D738D038DFB7A7C090FD0C53B /* PBXTargetDependency */,
+			);
+			name = "Pods-TFSlideControl_Tests";
+			productName = "Pods-TFSlideControl_Tests";
+			productReference = CACF17A2A011B570AE38069CF7193740 /* Pods_TFSlideControl_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					10C5E376B6E440BE27B839FF9CB6FCCB = {
+						LastSwiftMigration = 0800;
+					};
+					1A89B1E9330D1DC6314456EB270DC44A = {
+						LastSwiftMigration = 0800;
+					};
+					4B079BDADAEF0970F22C2B33CB923340 = {
+						LastSwiftMigration = 0800;
+					};
+					64A75C18A3E61CAD7FF3BEB874A51806 = {
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B7E39B12934CDC51DBE83B48F7A50AC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B079BDADAEF0970F22C2B33CB923340 /* Pods-TFSlideControl_Example */,
+				64A75C18A3E61CAD7FF3BEB874A51806 /* Pods-TFSlideControl_Tests */,
+				1A89B1E9330D1DC6314456EB270DC44A /* TFSlideControl */,
+				10C5E376B6E440BE27B839FF9CB6FCCB /* TFSlideControl-TFSlideControl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1430F97E3BE6C4569A136840420938A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCCF7D6345DF98B15550E135E8CF708 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ED5C3D535A5A27EFC299F9A817ACC2E /* TFSlideControl.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		096A3BB0BB638F50314D11F6C5FA93EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FF02EE7281D6441E647F75E81E0C854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0691F4497015EC707A061E197216B7EB /* TFSlideControl-dummy.m in Sources */,
+				4729FF398FB91F33D077219786D9A662 /* TFSlideControl.swift in Sources */,
+				4212BDE4A4EAE6424CD9EFEFEE3969D9 /* TFSlideControlSliderStrategy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC0427A2C7E40203D3E86E169E825F4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CAD3E3923B3B5AD8D45D96B42F3A2F /* Pods-TFSlideControl_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F7AD357D61DCC227EED6829EE21529 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A517330C40C0B85263165091355F0D48 /* Pods-TFSlideControl_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DDDBB3A5A40860DB820B8B89C0B4D6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TFSlideControl-TFSlideControl";
+			target = 10C5E376B6E440BE27B839FF9CB6FCCB /* TFSlideControl-TFSlideControl */;
+			targetProxy = ADDA1B23FCECBF0FFB83734F251529CA /* PBXContainerItemProxy */;
+		};
+		AE6B24AD916909E64F5834E222F85C09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TFSlideControl;
+			target = 1A89B1E9330D1DC6314456EB270DC44A /* TFSlideControl */;
+			targetProxy = 84161FBE250B58390D881A8CDE4F7FEB /* PBXContainerItemProxy */;
+		};
+		D01A6B3D738D038DFB7A7C090FD0C53B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TFSlideControl;
+			target = 1A89B1E9330D1DC6314456EB270DC44A /* TFSlideControl */;
+			targetProxy = 99F5D328131E2B163D1AA0B83AC868EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A388B73BAA8098754C80F3DEFDF9B49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE906A21360E34837D1298F950BBE69D /* TFSlideControl.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TFSlideControl/TFSlideControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TFSlideControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TFSlideControl/TFSlideControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TFSlideControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1DF0CC9B6E88FBB39A43809D4D0E6699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FB8E015FBB1A649FDC41A68B88C8FEB /* Pods-TFSlideControl_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TFSlideControl_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TFSlideControl_Example/Pods-TFSlideControl_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TFSlideControl_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		431C94ED6BDC1B1B8422EC3DAE01DA3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE906A21360E34837D1298F950BBE69D /* TFSlideControl.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TFSlideControl";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/TFSlideControl/ResourceBundle-TFSlideControl-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = TFSlideControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		4B83DE518BBE16681A0F3226E6E097F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE906A21360E34837D1298F950BBE69D /* TFSlideControl.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TFSlideControl";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/TFSlideControl/ResourceBundle-TFSlideControl-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = TFSlideControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		8C9EB1AA3F844ECDA55180CB3300D3BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A765D2EEEFD802BF582495F4730BDB63 /* Pods-TFSlideControl_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TFSlideControl_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TFSlideControl_Example/Pods-TFSlideControl_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TFSlideControl_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E51E68610EF7A1DD5682DFFECABA962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A44DD3403C41A5E56C8314AD919D35FB /* Pods-TFSlideControl_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TFSlideControl_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TFSlideControl_Tests/Pods-TFSlideControl_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TFSlideControl_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A7A5FB2F946FD77807350B99333BB46F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDB82012A9B30AA2363311536CE996A0 /* Pods-TFSlideControl_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TFSlideControl_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TFSlideControl_Tests/Pods-TFSlideControl_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TFSlideControl_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B416DE797E64145F4DC0A7BFFF3FA5DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE906A21360E34837D1298F950BBE69D /* TFSlideControl.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TFSlideControl/TFSlideControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TFSlideControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TFSlideControl/TFSlideControl.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TFSlideControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FDE7F9DEAE924D622600C12FFEC3E74 /* Build configuration list for PBXNativeTarget "Pods-TFSlideControl_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E51E68610EF7A1DD5682DFFECABA962 /* Debug */,
+				A7A5FB2F946FD77807350B99333BB46F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D8E36048ED61BF70A6C6D3A2C1CCD5C /* Build configuration list for PBXNativeTarget "Pods-TFSlideControl_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DF0CC9B6E88FBB39A43809D4D0E6699 /* Debug */,
+				8C9EB1AA3F844ECDA55180CB3300D3BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		762FF152BDCEF0D5277577A9EF6575AB /* Build configuration list for PBXNativeTarget "TFSlideControl-TFSlideControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B83DE518BBE16681A0F3226E6E097F9 /* Debug */,
+				431C94ED6BDC1B1B8422EC3DAE01DA3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88777B4790043D187DDEF8AD5820E720 /* Build configuration list for PBXNativeTarget "TFSlideControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B416DE797E64145F4DC0A7BFFF3FA5DB /* Debug */,
+				1A388B73BAA8098754C80F3DEFDF9B49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -9,68 +9,67 @@
 import UIKit
 
 public protocol TFSlideControlSliderStrategyProtocol {
-    func isTouchValidForBegin(slideControl: TFSlideControl, touch: UITouch) -> Bool
-    func isTouchValidForFinish(slideControl: TFSlideControl, touch: UITouch) -> Bool
+    func isTouchValidForBegin(_ slideControl: TFSlideControl, touch: UITouch) -> Bool
+    func isTouchValidForFinish(_ slideControl: TFSlideControl, touch: UITouch) -> Bool
     
-    func updateSlideToInitialPosition(slideControl: TFSlideControl, animated: Bool)
-    func updateSlideToFinalPosition(slideControl: TFSlideControl, animated: Bool, completion: () -> ())
-    func updateSlideControlForTouch(slideControl: TFSlideControl, touch: UITouch)
+    func updateSlideToInitialPosition(_ slideControl: TFSlideControl, animated: Bool)
+    func updateSlideToFinalPosition(_ slideControl: TFSlideControl, animated: Bool, completion: @escaping () -> ())
+    func updateSlideControlForTouch(_ slideControl: TFSlideControl, touch: UITouch)
     
-    func animateGuideTrace(slideControl: TFSlideControl, completion: () -> ())
+    func animateGuideTrace(_ slideControl: TFSlideControl, completion: @escaping () -> ())
 }
 
-public class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyProtocol {
-
+open class TFSlideControlSliderDefaultStrategy: TFSlideControlSliderStrategyProtocol {
     public init() {
     }
     
-    public func isTouchValidForBegin(slideControl: TFSlideControl, touch: UITouch) -> Bool {
-        let location = touch.locationInView(slideControl)
-        return CGRectContainsPoint(slideControl.handleView.frame, location)
+    open func isTouchValidForBegin(_ slideControl: TFSlideControl, touch: UITouch) -> Bool {
+        let location = touch.location(in: slideControl)
+        return slideControl.handleView.frame.contains(location)
     }
     
     
-    public func isTouchValidForFinish(slideControl: TFSlideControl, touch: UITouch) -> Bool {
+    open func isTouchValidForFinish(_ slideControl: TFSlideControl, touch: UITouch) -> Bool {
         let rect = rectForSlideControl(slideControl, touch: touch)
-        return CGRectGetMinX(rect) == CGRectGetMaxX(slideControl.contentBounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset)
+        return rect.minX == slideControl.contentBounds.maxX - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset)
     }
     
-    public func updateSlideToInitialPosition(slideControl: TFSlideControl, animated: Bool) {
+    open func updateSlideToInitialPosition(_ slideControl: TFSlideControl, animated: Bool) {
         let duration = animated ? 0.3 : 0.0
-        UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
             var handleFrame = slideControl.handleView.frame
-            handleFrame.origin = CGPointMake(slideControl.horizontalPadding, 0)
+            handleFrame.origin = CGPoint(x: slideControl.horizontalPadding, y: 0)
             slideControl.handleView.frame = handleFrame
         }, completion: nil)
     }
     
-    public func updateSlideToFinalPosition(slideControl: TFSlideControl, animated: Bool, completion: () -> ()) {
+    open func updateSlideToFinalPosition(_ slideControl: TFSlideControl, animated: Bool, completion: @escaping () -> ()) {
         let duration = animated ? 0.3 : 0.0
-        UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: { () -> Void in
             var handleFrame = slideControl.handleView.frame
-            handleFrame.origin = CGPointMake(CGRectGetMaxX(slideControl.contentBounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset), 0)
+            handleFrame.origin = CGPoint(x: slideControl.contentBounds.maxX - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset), y: 0)
             slideControl.handleView.frame = handleFrame
             }, completion: { (finished: Bool) -> Void in
                 completion()
         })
     }
     
-    public func updateSlideControlForTouch(slideControl: TFSlideControl, touch: UITouch) {
+    open func updateSlideControlForTouch(_ slideControl: TFSlideControl, touch: UITouch) {
         slideControl.handleView.frame = rectForSlideControl(slideControl, touch: touch)
     }
     
-    public func animateGuideTrace(slideControl: TFSlideControl, completion: () -> ()) {
+    open func animateGuideTrace(_ slideControl: TFSlideControl, completion: @escaping () -> ()) {
         
     }
 
     
-    public func rectForSlideControl(slideControl: TFSlideControl, touch: UITouch) -> CGRect {
-        let location = touch.locationInView(slideControl)
+    open func rectForSlideControl(_ slideControl: TFSlideControl, touch: UITouch) -> CGRect {
+        let location = touch.location(in: slideControl)
         var handleFrame = slideControl.handleView.frame
         var x = location.x - slideControl.trackingTouchHandlePosition.x
-        x = min(x,CGRectGetMaxX(slideControl.contentBounds) - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset))
+        x = min(x,slideControl.contentBounds.maxX - slideControl.horizontalPadding - CGFloat(slideControl.handleConfirmOffset))
         x = max(x,slideControl.horizontalPadding)
-        handleFrame.origin = CGPointMake(x, 0)
+        handleFrame.origin = CGPoint(x: x, y: 0)
         return handleFrame
     }
     

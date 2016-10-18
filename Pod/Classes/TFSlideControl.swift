@@ -8,25 +8,25 @@
 
 import UIKit
 
-@IBDesignable public class TFSlideControl: UIControl {
+@IBDesignable open class TFSlideControl: UIControl {
     
-    public var sliderStrategy: TFSlideControlSliderStrategyProtocol = TFSlideControlSliderDefaultStrategy()
-    public var resetWhenDraggingCancelled = false
-    public var resetAfterValueChange: Bool = false
-    public var guideAnimationInterval: NSTimeInterval = 1.25
-    public private(set) var horizontalPadding: CGFloat = 0
+    open var sliderStrategy: TFSlideControlSliderStrategyProtocol = TFSlideControlSliderDefaultStrategy()
+    open var resetWhenDraggingCancelled = false
+    open var resetAfterValueChange: Bool = false
+    open var guideAnimationInterval: TimeInterval = 1.25
+    open fileprivate(set) var horizontalPadding: CGFloat = 0
     
-    public var trackingTouch: UITouch?
-    public var trackingTouchHandlePosition: CGPoint = CGPointZero
-    private var guideTimer: NSTimer?
+    open var trackingTouch: UITouch?
+    open var trackingTouchHandlePosition: CGPoint = CGPoint.zero
+    fileprivate var guideTimer: Timer?
     
-    @IBInspectable public var contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0) {
+    @IBInspectable open var contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0) {
         didSet {
             setNeedsLayout()
         }
     }
     
-    @IBInspectable public var backgroundImage: UIImage? {
+    @IBInspectable open var backgroundImage: UIImage? {
         get{
             if let imageView = backgroundView as? UIImageView {
                 return imageView.image
@@ -36,13 +36,13 @@ import UIKit
         }
         set(image){
             let imageView = UIImageView.init()
-            imageView.contentMode = .ScaleAspectFit
+            imageView.contentMode = .scaleAspectFit
             imageView.image = image
             backgroundView = imageView
         }
     }
     
-    @IBInspectable public var overlayImage: UIImage? {
+    @IBInspectable open var overlayImage: UIImage? {
         get{
             if let imageView = overlayView as? UIImageView {
                 return imageView.image
@@ -52,17 +52,17 @@ import UIKit
         }
         set(image){
             let imageView = UIImageView.init()
-            imageView.contentMode = .ScaleAspectFit
+            imageView.contentMode = .scaleAspectFit
             imageView.image = image
             overlayView = imageView
         }
     }
     
-    @IBInspectable public var guideImage: UIImage? {
+    @IBInspectable open var guideImage: UIImage? {
         didSet {
             if let guideImage = guideImage {
                 let guideView = UIImageView()
-                guideView.contentMode = .Right
+                guideView.contentMode = .right
                 guideView.image = guideImage
                 self.guideView = guideView
             } else {
@@ -71,29 +71,29 @@ import UIKit
         }
     }
     
-    @IBInspectable public var maskImage: UIImage? {
+    @IBInspectable open var maskImage: UIImage? {
         didSet {
             if let maskImage = maskImage {
                 let _maskView = UIImageView()
-                _maskView.contentMode = .ScaleAspectFit
+                _maskView.contentMode = .scaleAspectFit
                 _maskView.image = maskImage
-                maskView = _maskView                
+                mask = _maskView                
             } else {
-                maskView = nil
+                mask = nil
             }
         }
     }
-    @IBInspectable public var handleWidth: Float = 50.0 {
+    @IBInspectable open var handleWidth: Float = 50.0 {
         didSet(value) {
             updateHandleFrame()
         }
     }
-    @IBInspectable public var handleConfirmOffset: Float = 0.0
-    @IBInspectable public var handleImage: UIImage? {
+    @IBInspectable open var handleConfirmOffset: Float = 0.0
+    @IBInspectable open var handleImage: UIImage? {
         didSet(value) {
             if let handleImage = handleImage {
                 let imageView = UIImageView()
-                imageView.contentMode = .Right
+                imageView.contentMode = .right
                 imageView.image = handleImage
                 handleView = imageView
                 updateHandleFrame()
@@ -101,32 +101,32 @@ import UIKit
         }
     }
     
-    public var backgroundView: UIView? {
+    open var backgroundView: UIView? {
         willSet{
             backgroundView?.removeFromSuperview()
         }
         didSet{
             if let backgroundView = backgroundView {
                 self.addSubview(backgroundView)
-                self.sendSubviewToBack(backgroundView)
+                self.sendSubview(toBack: backgroundView)
             }
         }
     }
-    public var overlayView: UIView? {
+    open var overlayView: UIView? {
         willSet{
             overlayView?.removeFromSuperview()
         }
         didSet{
             if let overlayView = overlayView {
                 self.addSubview(overlayView)
-                self.bringSubviewToFront(overlayView)
+                self.bringSubview(toFront: overlayView)
             }
         }
     }
     
-    public var handleView: UIView = {
+    open var handleView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         return view
     }()
     {
@@ -142,7 +142,7 @@ import UIKit
         }
     }
     
-    public var guideView: UIView? {
+    open var guideView: UIView? {
         willSet {
             guideView?.removeFromSuperview()
         }
@@ -153,7 +153,7 @@ import UIKit
         }
     }
     
-    lazy public var contentBounds: CGRect = {
+    lazy open var contentBounds: CGRect = {
        return UIEdgeInsetsInsetRect(self.bounds, self.contentInsets)
     }()
 
@@ -168,19 +168,19 @@ import UIKit
         customInit()
     }
     
-    private func customInit() {
+    fileprivate func customInit() {
         addSubview(handleView)
     }
     
     //MARK: guide view handling
     
-    public func scheduleGuideAnimationIfNeeded() {
-        if guideTimer == nil || !guideTimer!.valid {
-            guideTimer = NSTimer.scheduledTimerWithTimeInterval(guideAnimationInterval, target: self, selector: "guideAnimationTick", userInfo: nil, repeats: false)
+    open func scheduleGuideAnimationIfNeeded() {
+        if guideTimer == nil || !guideTimer!.isValid {
+            guideTimer = Timer.scheduledTimer(timeInterval: guideAnimationInterval, target: self, selector: #selector(TFSlideControl.guideAnimationTick), userInfo: nil, repeats: false)
         }
     }
     
-    public func guideAnimationTick() {
+    open func guideAnimationTick() {
         sliderStrategy.animateGuideTrace(self) { () -> () in
             self.scheduleGuideAnimationIfNeeded()
         }
@@ -188,16 +188,16 @@ import UIKit
     
     //MARK: frame handling
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         overlayView?.frame = contentBounds
         backgroundView?.frame = contentBounds
-        maskView?.frame = contentBounds
+        mask?.frame = contentBounds
         updateHandleFrame()
         
-        if let maskImage = self.maskImage, maskView = self.maskView {
-            let scale = CGRectGetHeight(maskView.frame) / maskImage.size.height
-            horizontalPadding = (CGRectGetWidth(self.frame) - scale * maskImage.size.width) / 2
+        if let maskImage = self.maskImage, let maskView = self.mask {
+            let scale = maskView.frame.height / maskImage.size.height
+            horizontalPadding = (self.frame.width - scale * maskImage.size.width) / 2
         } else {
             horizontalPadding = 0
         }
@@ -207,26 +207,26 @@ import UIKit
         scheduleGuideAnimationIfNeeded()
     }
     
-    private func updateHandleFrame() {
+    fileprivate func updateHandleFrame() {
         var handleFrame = handleView.frame
-        handleFrame.size = CGSizeMake(CGFloat(handleWidth), CGRectGetHeight(bounds))
+        handleFrame.size = CGSize(width: CGFloat(handleWidth), height: bounds.height)
         handleView.frame = handleFrame
         guideView?.frame = handleFrame
     }
     
     // MARK: public state methods
     
-    public func reset(animated: Bool) {
+    open func reset(_ animated: Bool) {
         sliderStrategy.updateSlideToInitialPosition(self, animated: animated)
     }
     
-    public func submit(animated: Bool) {
+    open func submit(_ animated: Bool) {
         sliderStrategy.updateSlideToFinalPosition(self, animated: animated) { () -> () in
             self.endDragging()
         }
     }
     
-    public func tryStartDragging(touches: Set<UITouch>) {
+    open func tryStartDragging(_ touches: Set<UITouch>) {
         if trackingTouch != nil{
             return
         }
@@ -238,14 +238,14 @@ import UIKit
     
     //MARK: event handling
     
-    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guideTimer?.invalidate()
         guideTimer = nil
         
         tryStartDragging(touches)
     }
     
-    public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if trackingTouch == nil {
             tryStartDragging(touches)
         }
@@ -253,8 +253,8 @@ import UIKit
         updateDragging()
     }
     
-    public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let trackingTouch = trackingTouch where touches.contains(trackingTouch){
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let trackingTouch = trackingTouch , touches.contains(trackingTouch){
             if sliderStrategy.isTouchValidForFinish(self, touch: trackingTouch){
                 endDragging()
             } else {
@@ -268,37 +268,37 @@ import UIKit
     
     //MARK: private event handling methods
     
-    private func updateSlideControlForTrackingTouch() {
+    fileprivate func updateSlideControlForTrackingTouch() {
         if let trackingTouch = trackingTouch {
             sliderStrategy.updateSlideControlForTouch(self, touch: trackingTouch)
         }
     }
     
-    private func startDragging(touch: UITouch) {
+    fileprivate func startDragging(_ touch: UITouch) {
         trackingTouch = touch
-        trackingTouchHandlePosition = touch.locationInView(handleView)
+        trackingTouchHandlePosition = touch.location(in: handleView)
         guideView?.alpha = 0.0
         
         if resetWhenDraggingCancelled {
             reset(false)
         }
     }
-    private func updateDragging() {
+    fileprivate func updateDragging() {
         updateSlideControlForTrackingTouch()
     }
-    private func cancelDragging() {
+    fileprivate func cancelDragging() {
         trackingTouch = nil
-        trackingTouchHandlePosition = CGPointZero
+        trackingTouchHandlePosition = CGPoint.zero
         
         if resetWhenDraggingCancelled {
             reset(true)
         }
     }
-    private func endDragging() {
+    fileprivate func endDragging() {
         updateSlideControlForTrackingTouch()
         trackingTouch = nil
-        trackingTouchHandlePosition = CGPointZero
-        sendActionsForControlEvents(.ValueChanged)
+        trackingTouchHandlePosition = CGPoint.zero
+        sendActions(for: .valueChanged)
         if resetAfterValueChange {
             reset(true)
         }
